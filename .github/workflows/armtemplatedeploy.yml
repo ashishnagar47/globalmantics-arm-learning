@@ -22,5 +22,5 @@ jobs:
         uses: Azure/cli@v1
         with:
          inlineScript: |
-          az deployment sub create --location "Central India" --template-file ./arm-templates/resourcegroup.json
+          az account show
 
