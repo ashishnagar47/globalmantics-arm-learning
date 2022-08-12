@@ -25,10 +25,11 @@ jobs:
           subscriptionId: 68a33762-d609-4c0d-8155-85dc7542da37
           region: Central India
           template: ./arm-templates/resourcegroup.json
-          deploymentName: rg-githubactions2
+          deploymentName: rg-githubactions
 
       - name: Deploy Storage Account 
         uses: Azure/arm-deploy@v1
+        id: storageAccountDeploy
         with:
           scope: resourcegroup
           resourceGroupName: rg-githubactions
@@ -36,5 +37,7 @@ jobs:
           template: ./arm-templates/storageaccount.json
           parameters: ./arm-templates/storageaccount.parameters.json
           deploymentMode: incremental
+
+      - run: echo ${{ steps.storageAccountDeploy.outputs.BlobUri}}
           
 
