@@ -16,7 +16,6 @@ jobs:
     env:
       resource_group_name: rg-stg-githubactions
       location: Central India
-      subscriptionId: 68a33762-d609-4c0d-8155-85dc7542da37
     environment:
       name: staging
 
@@ -35,6 +34,7 @@ jobs:
           subscriptionId: ${{ env.subscriptionId}}
           region: "${{ env.location }}"
           template: ./arm-templates/resourcegroup.json
+          parameter: ${{ env.resource_group_name }}
           deploymentName: ${{ env.resource_group_name }}
 
       - name: Deploy Storage Account 
@@ -68,7 +68,6 @@ jobs:
       env:
         resource_group_name: rg-prod-githubactions
         location: East India
-        subscriptionId: 68a33762-d609-4c0d-8155-85dc7542da37
       environment:
         name: production
       
@@ -89,6 +88,7 @@ jobs:
             subscriptionId: ${{ env.subscriptionId}}
             region: "${{ env.location }}"
             template: ./arm-templates/resourcegroup.json
+            parameter: ${{ env.resource_group_name }}
             deploymentName: ${{ env.resource_group_name }}
 
         - name: Deploy Storage Account 
