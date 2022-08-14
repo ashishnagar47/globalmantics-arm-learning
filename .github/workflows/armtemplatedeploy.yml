@@ -68,7 +68,7 @@ jobs:
       runs-on: ubuntu-latest
       env:
         resource_group_name: rg-prod-githubactions
-        location: East India
+        location: South India
       environment:
         name: production
       
