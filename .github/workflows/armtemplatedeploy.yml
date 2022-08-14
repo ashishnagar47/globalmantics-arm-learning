@@ -16,6 +16,7 @@ jobs:
     env:
       resource_group_name: rg-stg-githubactions
       location: Central India
+      subscriptionId: 68a33762-d609-4c0d-8155-85dc7542da37
     environment:
       name: staging
 
@@ -67,6 +68,7 @@ jobs:
       env:
         resource_group_name: rg-prod-githubactions
         location: East India
+        subscriptionId: 68a33762-d609-4c0d-8155-85dc7542da37
       environment:
         name: production
       
