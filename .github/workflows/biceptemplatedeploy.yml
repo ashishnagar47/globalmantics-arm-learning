@@ -32,7 +32,7 @@ jobs:
             --template-file ./bicep-templates/resourceGroup.bicep \
             --parameters \
             resource_group_name:${{env.resource_group_name}} \
-            location:${{ env.location}}
+            location:"${{ env.location}}"
 
       - name: Deploy virtual network
         uses: Azure/cli@v1
@@ -43,7 +43,7 @@ jobs:
             --template-file ./bicep-templates/virtualNetwork.bicep \
             --parameters \
             vNetPrefix=bicepAzCli \
-            location:${{ env.location}}
+            location:"${{ env.location}}"
 
 
   bicepArmDeployAction:
