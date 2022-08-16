@@ -26,7 +26,7 @@ jobs:
         uses: Azure/cli@v1
         with:
           inlinescript: |
-            az deplyment sub create \
+            az deployment sub create \
             --name ${{ env.resource_group_name}} \
             --location ${{ env.location}} \
             --template-file ./bicep-templates/resourceGroup.bicep \
@@ -38,7 +38,7 @@ jobs:
         uses: Azure/cli@v1
         with:
           inlinescript: |
-            az deplyment group create \
+            az deployment group create \
             --resource-group ${{ env.resource_group_name}} \
             --template-file ./bicep-templates/virtualNetwork.bicep \
             --parameters \
